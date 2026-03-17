@@ -8,13 +8,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Download spaCy English model
 RUN python -m spacy download en_core_web_sm
 
-COPY . .
+COPY backend/ .
 
 EXPOSE 8000
 
