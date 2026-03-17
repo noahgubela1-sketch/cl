@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 10 15;
+    --foreground: 255 255 255;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-film-dark text-white;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-film-panel;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-500 rounded-full;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-film-card rounded-xl border border-white/5 p-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium
+           text-white hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500
+           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium
+           text-white/70 hover:bg-white/5 hover:text-white focus:outline-none transition-colors;
+  }
+
+  .badge-day {
+    @apply inline-flex items-center rounded-full bg-amber-500/10 px-2 py-0.5 text-xs text-amber-400;
+  }
+
+  .badge-night {
+    @apply inline-flex items-center rounded-full bg-indigo-500/10 px-2 py-0.5 text-xs text-indigo-400;
+  }
+
+  .badge-int {
+    @apply inline-flex items-center rounded-full bg-teal-500/10 px-2 py-0.5 text-xs text-teal-400;
+  }
+
+  .badge-ext {
+    @apply inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs text-emerald-400;
+  }
+}
